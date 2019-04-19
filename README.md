@@ -11,3 +11,4 @@
 	日期类型：DateTimeField
 	自增ID：AutoField
 	主键定义：primary_key属性
+使用Django Shell创建一篇文章
