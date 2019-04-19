@@ -12,3 +12,9 @@
 	自增ID：AutoField
 	主键定义：primary_key属性
 使用Django Shell创建一篇文章
+
+Django Admin 模块
+创建超级用户
+在admin.py中调用模型 from (app-name).models import your-model-name
+然后将模型注册到admin模块里面 admin.site.register(your-model-name)
+想要返回title-name  模型中定义__str__  return self.title
