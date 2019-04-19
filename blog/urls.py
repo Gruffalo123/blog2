@@ -1,7 +1,8 @@
 from django.urls import path,include
 
-import blog.views
+import blog.views as bv
 
 urlpatterns = [
-    path('hello_world',blog.views.hello_world),
+    path('hello_world',bv.hello_world),
+    path('content',bv.article_content),
 ]

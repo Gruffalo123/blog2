@@ -18,3 +18,7 @@ Django Admin 模块
 在admin.py中调用模型 from (app-name).models import your-model-name
 然后将模型注册到admin模块里面 admin.site.register(your-model-name)
 想要返回title-name  模型中定义__str__  return self.title
+
+
+实现博客数据返回页面
+注：视图函数名不可与路由名相同
