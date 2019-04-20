@@ -18,3 +18,18 @@ def article_content(request):
                                                                                        publish_date)
 
     return HttpResponse(return_str)
+
+
+#博客主页面
+def get_index_page(request):
+    all_article = Article.objects.all()
+    return render(request,'blog/index.html',{'article_list':all_article})
+
+
+#文章详情页
+def get_detail_page(request):
+    current_article = Article.objects.all()[2]
+    #将文章内容一段一段展示出来，不然文章是挤在一起，很不美观
+    section_list = current_article.content.split('\n')
+    return render(request,'blog/detail.html',{'current_article':current_article,
+                                              'section_list':section_list})

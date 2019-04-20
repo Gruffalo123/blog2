@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文章详情页</title>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container page-header">
+    <h1>{{ current_article.title }}</h1>
+</div>
+
+<div class="container page-body">
+    <div>
+        {% for section in section_list %}
+        <p>{{ section }}</p>
+        {% endfor %}
+    </div>
+
+
+
+</div>
+
+</body>
+</html>
