@@ -27,6 +27,7 @@ Django Admin 模块
 
 
 使用bootstrap实现静态博客页面
+bootcss.com/起步
 
 使用模板系统渲染博客页面
 ——博客首页
@@ -36,3 +37,6 @@ Django Admin 模块
 实现文章详情页面的跳转
 ——文章详情页url设计
 ——首页跳转&右侧最新文章跳转
+
+实现上下篇文章跳转
+boocss.com/组件/分页/翻页
