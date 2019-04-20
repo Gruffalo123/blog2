@@ -32,6 +32,7 @@ def get_index_page(request):
     print('page_num:',curr_page_num)
 
     all_article = Article.objects.all()
+    top5_article_list = Article.objects.order_by('-publish_date')[:5]
     #对列表分成3页
     p = Paginator(all_article,3)
     print('page_count',p.num_pages)
@@ -55,7 +56,8 @@ def get_index_page(request):
                                              'page_num':range(1,page_count + 1),
                                              'current_page_num':curr_page_num,
                                              'previous_page_num':previous_page_num,
-                                             'next_page_num':next_page_num})
+                                             'next_page_num':next_page_num,
+                                             'top5_article_list':top5_article_list})
 
 
 #文章详情页

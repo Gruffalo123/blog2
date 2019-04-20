@@ -46,3 +46,5 @@ boocss.com/组件/分页/翻页
 ——bootstrap实现分页按钮bootcss.com/组件/分页/默认分页
 ——设计分页url
 ——使用django分页组件实现分页功能
+
+实现最新文章列表

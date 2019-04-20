@@ -53,7 +53,7 @@
     <div class="col-md-3" role="complementary">
         <div>
             <h2>最新文章</h2>
-            {% for article in article_list %}
+            {% for article in top5_article_list %}
             <h4><a href="detail/{{ article.article_id }}">{{ article.title }}</a></h4>
             {% endfor %}
         </div>
