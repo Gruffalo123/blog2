@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 # Create your views here.
 from blog.models import Article
+from django.core.paginator import Paginator
 
 def hello_world(request):
     return HttpResponse("Hello world!")
@@ -22,8 +23,39 @@ def article_content(request):
 
 #博客主页面
 def get_index_page(request):
+    #获取到的当前页面数字 index?page=(1,2,3...)
+    curr_page_num = request.GET.get('page')
+    if curr_page_num:
+        curr_page_num = int(curr_page_num)
+    else:
+        curr_page_num = 1
+    print('page_num:',curr_page_num)
+
     all_article = Article.objects.all()
-    return render(request,'blog/index.html',{'article_list':all_article})
+    #对列表分成3页
+    p = Paginator(all_article,3)
+    print('page_count',p.num_pages)
+    #总的页面数量,
+    page_count = p.num_pages
+    #当前分页页面的内容
+    page_article_list = p.page(curr_page_num)
+    if page_article_list.has_next():
+        next_page_num = curr_page_num + 1
+    else:
+        next_page_num = curr_page_num
+
+    if page_article_list.has_previous():
+        previous_page_num = curr_page_num - 1
+    else:
+        previous_page_num = curr_page_num
+
+
+
+    return render(request,'blog/index.html',{'article_list':page_article_list,
+                                             'page_num':range(1,page_count + 1),
+                                             'current_page_num':curr_page_num,
+                                             'previous_page_num':previous_page_num,
+                                             'next_page_num':next_page_num})
 
 
 #文章详情页

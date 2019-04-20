@@ -40,3 +40,9 @@ bootcss.com/起步
 
 实现上下篇文章跳转
 boocss.com/组件/分页/翻页
+
+
+实现分页功能
+——bootstrap实现分页按钮bootcss.com/组件/分页/默认分页
+——设计分页url
+——使用django分页组件实现分页功能
