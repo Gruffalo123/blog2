@@ -27,8 +27,13 @@ def get_index_page(request):
 
 
 #文章详情页
-def get_detail_page(request):
-    current_article = Article.objects.all()[2]
+def get_detail_page(request,article_id):
+    all_article = Article.objects.all()
+    current_article = None
+    for article in all_article:
+        if article.article_id == article_id:
+            current_article = article
+            break
     #将文章内容一段一段展示出来，不然文章是挤在一起，很不美观
     section_list = current_article.content.split('\n')
     return render(request,'blog/detail.html',{'current_article':current_article,
