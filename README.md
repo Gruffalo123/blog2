@@ -2,6 +2,8 @@
 开发环境：Python3.5 Django2.2
 （开发步骤/详情）
 
+[项目参考来源](https://www.imooc.com/learn/1110)
+
 ### 设计博客模型：  
 
 &emsp;文章标题——文本类型  
